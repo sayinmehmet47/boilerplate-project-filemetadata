@@ -14,10 +14,11 @@ app.use(cors({ optionsSuccessStatus: 200 }));
 app.use(express.static('public'));
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/api/fileanalyse', fileanalyse);
-
 app.get('/', function (req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
-const listener = app.listen(process.env.PORT || 3000, () => {
-  console.log('Your app is listening on port ' + listener.address().port);
+
+const port = process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log('Your app is listening on port ' + port);
 });
