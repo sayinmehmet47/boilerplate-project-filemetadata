@@ -2,13 +2,13 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
+
 const { urlencoded } = require('body-parser');
 
 require('dotenv').config();
 
 mongoose.connect(process.env.MONGO_URI).then(console.log('connected'));
 const fileanalyse = require('./api/files.js');
-
 app.use(urlencoded({ extended: false }));
 app.use(cors({ optionsSuccessStatus: 200 }));
 app.use(express.static('public'));
