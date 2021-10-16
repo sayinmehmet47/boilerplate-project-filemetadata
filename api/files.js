@@ -4,7 +4,7 @@ const multer = require('multer');
 const upload = multer({ dest: './public/data/uploads' });
 const MyFiles = require('../models/Files.js');
 
-router.post('/', upload.single('uploaded_file'), function (req, res) {
+router.post('/', upload.single('upfile'), function (req, res) {
   // req.file is the name of your file in the form above, here 'uploaded_file'
   // req.body will hold the text fields, if there were any
   console.log(req.file);
