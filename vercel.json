@@ -8,7 +8,7 @@
     ],
     "routes": [
         {
-            "src": "/api/fileanalyse",
+            "src": "/(.*)",
             "dest": "/server.js"
         }
     ]
